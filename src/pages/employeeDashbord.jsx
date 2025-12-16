@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { EMP_API } from "../config";
 
 const EmployeeDashboard = () => {
   const [totalEmployees, setTotalEmployees] = useState(0);
@@ -8,7 +9,7 @@ const EmployeeDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/employee/total", {
+        const res = await axios.get(`${EMP_API}/total`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setTotalEmployees(res.data.totalEmployees);
