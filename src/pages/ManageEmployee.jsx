@@ -4,7 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { BASE_API, DEPT_API, EMP_API } from "../config.js";
 
-// const BASE_URL = "http://localhost:3000";
+
+
 const token = localStorage.getItem("token");
 
 const axiosAuth = axios.create({
@@ -215,7 +216,7 @@ const ManageEmployee = () => {
                     <td className="p-3">
                       {emp.profileImage ? (
                         <img
-                          src={emp.profileImage.startsWith("/") ? `${BASE_URL}${emp.profileImage}` : emp.profileImage}
+                          src={emp.profileImage.startsWith("/") ? `${BASE_API}${emp.profileImage}` : emp.profileImage}
                           alt={emp.name}
                           className={`w-10 h-10 rounded-full object-cover ${emp.isDeleted ? "opacity-50" : ""}`}
                         />
