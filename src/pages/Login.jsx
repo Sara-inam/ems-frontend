@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { BASE_API } from "../config.JS";
 
 
 const Login = () => {
@@ -25,8 +26,7 @@ const Login = () => {
     // setMessage("");
 
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/login", {
-        // name: formData.name,
+      const response = await axios.post(`${BASE_API}/auth/login`, {
         email: formData.email,
         password: formData.password,
       });
