@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { DEPT_API, EMP_API } from "../config.js";
+import { BASE_API, DEPT_API, EMP_API } from "../config.js";
 
-const BASE_URL = "http://localhost:3000";
+// const BASE_URL = "http://localhost:3000";
 const token = localStorage.getItem("token");
 
 const axiosAuth = axios.create({
@@ -170,7 +170,7 @@ const ManageEmployee = () => {
 
   const getPreview = (file, existingPath = null) => {
     if (file instanceof File) return URL.createObjectURL(file);
-    if (existingPath) return existingPath.startsWith("/") ? `${BASE_URL}${existingPath}` : existingPath;
+    if (existingPath) return existingPath.startsWith("/") ? `${BASE_API}${existingPath}` : existingPath;
     return null;
   };
 
