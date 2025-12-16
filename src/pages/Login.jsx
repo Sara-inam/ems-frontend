@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { BASE_API } from "../config.JS";
+import { BASE_API } from "../config";
 
 
 const Login = () => {
